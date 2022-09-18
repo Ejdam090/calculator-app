@@ -13,7 +13,7 @@ const Display = () => {
 
 const DisplayWrapper = styled.div`
 height: 5rem;
-width: 70%;
+width: 500px;
 border-radius: .5rem;
 padding: .5rem;
 margin: 1rem;
