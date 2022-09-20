@@ -33,7 +33,7 @@ const Buttons = ({display}) => {
       </div>
       <div className="row-5">
       <Button button={'Reset'} id={'clear'}  type={'clear'} className='bg-blue'/>
-      <Button button={'='} id={'equals'} display={display}  type={'operator'} className='bg-red'/>
+      <Button button={'='} id={'equals'} display={display}  type={'equals'} className='bg-red'/>
       </div>
     </ButtonContainer>
   );

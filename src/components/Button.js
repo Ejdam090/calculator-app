@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import {connect} from 'react-redux';
-import { updateDisplay,  subtraction, multiplication, division } from '../actions/actionTypes';
-import { clearDIsplay } from './../actions/actionTypes';
+import { updateDisplay,  subtraction, multiplication, division, equal } from '../actions/actionTypes';
+import { clearDIsplay, addition } from './../actions/actionTypes';
 
-const Button = ({updateDisplay, subtract, multiply, divide,clear, display, button, id, value, className}) => {
+const Button = ({updateDisplay,add, subtract, multiply, divide,clear, display, button, id, value, className}) => {
     const handleClick = e =>{
         if(id === 'clear'){
             clear();
@@ -14,7 +14,12 @@ const Button = ({updateDisplay, subtract, multiply, divide,clear, display, butto
             multiply(display);
         }else if(id ==='divide'){
             divide(display);
-        }else{
+        }else if(id ==='add'){
+            add(button);
+        }else if(id ==='equals'){
+            equal(display);
+        }
+        else{
             updateDisplay(button);
         }
     }
@@ -29,7 +34,9 @@ const mapDispatchToProps = dispatch =>({
     subtract: display  => dispatch(subtraction(display)),
     multiply: display => dispatch(multiplication(display)),
     divide: display => dispatch(division(display)),
-    clear: display => dispatch(clearDIsplay(dispatch))
+    clear: display => dispatch(clearDIsplay(dispatch)),
+    add: display => dispatch(addition(display)),
+    equal: display => dispatch(equal(display))
 });
 
 const ButtonWrapper = styled.button`
