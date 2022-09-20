@@ -2,14 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 import Buttons from './components/Buttons';
 import Display from './components/Display';
+import { getDisplay } from './selector/Selector';
+import {connect} from 'react-redux';
 
-
-function App() {
+function App({display}) {
   return (
     <Container>
     <div className='display_wrapper'>
-      <Display />
-      <Buttons />
+      <Display display ={display} />
+      <Buttons display={display} />
     </div>
       
     </Container>
@@ -33,4 +34,19 @@ align-items: center;
   }
 
 `;
-export default App;
+
+
+const mapStateToProps = state => {
+  const displayValue = getDisplay(state);
+  return ({
+    display: displayValue,
+  });
+};
+
+
+
+
+export default connect(
+  mapStateToProps,
+  null
+)(App);

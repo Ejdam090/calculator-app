@@ -1,36 +1,39 @@
 import React from "react";
 import styled from "styled-components";
+import Button from './Button';
 
-const Buttons = () => {
+const Buttons = ({display}) => {
+
   return (
     <ButtonContainer>
       <div className="row-1">
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
-        <button className="bg-blue">Del</button>
+      <Button button={'7'} id={'seven'} value={'7'} type={'num'}/>
+      <Button button={'8'} id={'eight'} value={'8'} type={'num'}/>
+      <Button button={'9'} id={'nine'} value={'9'} type={'num'}/>
+      <Button button={'Del'} id={'Del'} value={'Del'} type={'clear'} className='bg-blue'/>
+        
       </div>
       <div className="row-2">
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button>+</button>
+      <Button button={'4'} id={'for'} value={'4'} type={'num'}/>
+      <Button button={'5'} id={'five'} value={'5'} type={'num'}/>
+      <Button button={'6'} id={'six'} value={'6'} type={'num'}/>
+      <Button button={'+'} id={'add'} value={'+'} display={display} type={'operator'}/>
       </div>
       <div className="row-3">
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>-</button>
+      <Button button={'1'} id={'one'} value={'2'} type={'num'}/>
+      <Button button={'2'} id={'two'} value={'2'} type={'num'}/>
+      <Button button={'3'} id={'three'} value={'3'} type={'num'}/>
+      <Button button={'-'} id={'subtract'} value={'subtract'} display={display} type={'operator'}/>
       </div>
       <div className="row-4">
-        <button>.</button>
-        <button>0</button>
-        <button>/</button>
-        <button>x</button>
+      <Button button={'.'} id={'decimal'} value={'.'} type={'decimal'} display={display}/>
+      <Button button={'0'} id={'zero'} value={'0'} type={'num'}/>
+      <Button button={'/'} id={'divide'}  type={'operator'} display={display}/>
+      <Button button={'x'} id={'multiply'} type={'operator'} display={display}/>
       </div>
       <div className="row-5">
-        <button className="bg-blue">Reset</button>
-        <button className="bg-red">=</button>
+      <Button button={'Reset'} id={'clear'}  type={'clear'} className='bg-blue'/>
+      <Button button={'='} id={'equals'} display={display}  type={'operator'} className='bg-red'/>
       </div>
     </ButtonContainer>
   );
@@ -45,24 +48,6 @@ const ButtonContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  button {
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 2rem;
-    outline: none;
-    border: none;
-    padding: 1rem;
-    margin: 0.5rem;
-    border-radius: 0.5rem;
-    background-color: #eae3db;
-    border-bottom: 3px solid #afa59b;
-    cursor: pointer;
-    transition: all 0.5s ease-in-out;
-    &:hover {
-      background-color: #afa59b;
-      border-bottom: 3px solid #eae3db;
-    }
-  }
   .bg-blue {
     background-color: #a2b3e1;
     border-bottom: 3px solid #414e6e;

@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Display = () => {
+const Display = ({display}) => {
   return (
     <DisplayWrapper>
       <div className='display-text'>
-        399,9999
+        {display}
       </div>
     </DisplayWrapper>
   )
