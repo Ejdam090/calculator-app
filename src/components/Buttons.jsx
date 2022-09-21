@@ -10,20 +10,20 @@ const Buttons = ({display}) => {
       <Button button={'7'} id={'seven'} value={'7'} type={'num'}/>
       <Button button={'8'} id={'eight'} value={'8'} type={'num'}/>
       <Button button={'9'} id={'nine'} value={'9'} type={'num'}/>
-      <Button button={'Del'} id={'Del'} value={'Del'} type={'clear'} className='bg-blue'/>
+      <Button button={'Del'} id={'Del'} value={'Del'} type={''} className='bg-blue'/>
         
       </div>
       <div className="row-2">
       <Button button={'4'} id={'for'} value={'4'} type={'num'}/>
       <Button button={'5'} id={'five'} value={'5'} type={'num'}/>
       <Button button={'6'} id={'six'} value={'6'} type={'num'}/>
-      <Button button={'+'} id={'add'} value={'+'} display={display} type={'operator'}/>
+      <Button button={'+'} id={'add'}  display={display} type={'operator'}/>
       </div>
       <div className="row-3">
       <Button button={'1'} id={'one'} value={'2'} type={'num'}/>
       <Button button={'2'} id={'two'} value={'2'} type={'num'}/>
       <Button button={'3'} id={'three'} value={'3'} type={'num'}/>
-      <Button button={'-'} id={'subtract'} value={'subtract'} display={display} type={'operator'}/>
+      <Button button={'-'} id={'subtract'}  display={display} type={'operator'}/>
       </div>
       <div className="row-4">
       <Button button={'.'} id={'decimal'} value={'.'} type={'decimal'} display={display}/>
