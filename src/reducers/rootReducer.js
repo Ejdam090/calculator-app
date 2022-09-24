@@ -43,10 +43,10 @@ export default function foo(state = initialState, action) {
         case DELL:{
             return{
                 ...state,
-                display: state.display === '0' || state.prevOP ==='operator'
-                ? state.display : state.display.slice(0, state.display.length - 1),
+                display: state.display === '0' ||  state.prevOP === "operator" 
+                ? state.display : state.display.slice(0,  state.display.length - 1),
                 history: state.display,
-                prevOP: 'operator'
+                
             }
         }
     case ADD: {
