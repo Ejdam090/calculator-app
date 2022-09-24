@@ -6,6 +6,7 @@ import {
   UPDATE,
   CLEAR,
   EQUAL,
+  DELL
 } from "../actions/actionTypes";
 import * as math from "mathjs";
 
@@ -18,6 +19,7 @@ const initialState = {
 
 export default function foo(state = initialState, action) {
   switch (action.type) {
+
     case UPDATE: {
       const updateDisplay = action.payload;
       if (
@@ -37,7 +39,16 @@ export default function foo(state = initialState, action) {
           prevOP: updateDisplay.operation,
         }
       }
-    }
+    }   
+        case DELL:{
+            return{
+                ...state,
+                display: state.display === '0' || state.prevOP ==='operator'
+                ? state.display : state.display.slice(0, state.display.length - 1),
+                history: state.display,
+                prevOP: 'operator'
+            }
+        }
     case ADD: {
       const history = () =>
         state.prevOP === "operator"
@@ -115,7 +126,7 @@ export default function foo(state = initialState, action) {
         ...state,
         display: "0",
         prevOP: "clear",
-        accumulated: 0,
+        accumulated: '0',
         history: "0"
       }
     }

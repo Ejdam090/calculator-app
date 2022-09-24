@@ -5,6 +5,7 @@ export const MULTIPLY = "MULTIPLY";
 export const DIVIDE = "DIVIDE";
 export const CLEAR = "CLEAR";
 export const EQUAL = "EQUAL";
+export const DELL = "DELL";
 
 
 export const updateDisplay = content => ({
@@ -17,6 +18,12 @@ export const updateDisplay = content => ({
 
 export const addition = content =>({
     type: ADD,
+    payload:{
+        operation:'operator'
+    }
+})
+export const backspace = content =>({
+    type: DELL,
     payload:{
         operation:'operator'
     }

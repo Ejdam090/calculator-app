@@ -10,7 +10,7 @@ const Buttons = ({display}) => {
       <Button button={'7'} id={'seven'} value={'7'} type={'num'}/>
       <Button button={'8'} id={'eight'} value={'8'} type={'num'}/>
       <Button button={'9'} id={'nine'} value={'9'} type={'num'}/>
-      <Button button={'Del'} id={'Del'} value={'Del'} type={''} className='bg-blue'/>
+      <Button button={'Del'} id={'del'} display={'display'} type={'operation'} className='bg-blue'/>
         
       </div>
       <div className="row-2">

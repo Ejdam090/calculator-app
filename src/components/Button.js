@@ -7,6 +7,7 @@ import {
   multiplication,
   division,
   equal,
+  backspace
 } from "../actions/actionTypes";
 import { clearDIsplay, addition } from "./../actions/actionTypes";
 
@@ -23,6 +24,7 @@ const Button = ({
   id,
   value,
   className,
+  backspace
 }) => {
   const handleClick = (e) => {
     if (id === "clear") {
@@ -35,10 +37,14 @@ const Button = ({
       divide(display);
     } else if (id === "add") {
       add(button);
-      
     } else if (id === "equals") {
       equal(display);
-    } else {
+    } 
+    else if(id === 'del'){
+        backspace(button);
+        console.log(backspace(button));
+    }
+        else {
       updateDisplay(button);
     }
   };
@@ -62,6 +68,7 @@ const mapDispatchToProps = (dispatch) => ({
   clear: (display) => dispatch(clearDIsplay(display)),
   add: (display) => dispatch(addition(display)),
   equal: (display) => dispatch(equal(display)),
+  backspace: display => dispatch(backspace(display))
 });
 
 const ButtonWrapper = styled.button`
