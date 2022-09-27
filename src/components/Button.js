@@ -85,5 +85,12 @@ const ButtonWrapper = styled.button`
     background-color: #afa59b;
     border-bottom: 3px solid #eae3db;
   }
+  @media (max-width: 530px) {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+  }
+  @media (max-width: 359px){
+        font-size: 1rem;
+      }
 `;
 export default connect(null, mapDispatchToProps)(Button);

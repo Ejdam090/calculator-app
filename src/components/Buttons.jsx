@@ -48,6 +48,9 @@ const ButtonContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media (max-width: 530px) {
+    width: 90%;
+  }
   .bg-blue {
     background-color: #a2b3e1;
     border-bottom: 3px solid #414e6e;
@@ -70,11 +73,29 @@ const ButtonContainer = styled.div`
   .row-4 {
     button {
       width: 6rem;
+      @media (max-width: 530px){
+        width: 5rem;
+      }
+      @media (max-width: 425px){
+        width: 4rem;
+      }
+      @media (max-width: 359px){
+        width: 3rem;
+      }
     }
   }
   .row-5 {
     button {
       width: 13rem;
+      @media (max-width: 530px){
+        width: 11rem;
+      }
+      @media (max-width: 425px){
+        width: 9rem;
+      }
+      @media (max-width: 359px){
+        width: 7rem;
+      }
     }
   }
 `;
