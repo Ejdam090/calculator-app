@@ -40,7 +40,8 @@ const Buttons = ({display}) => {
 };
 
 const ButtonContainer = styled.div`
-  background-color: #252d44;
+  background-color: ${(props)=> props.theme.buttonContBg};
+  color: ${props => props.theme.fontColorBtn};
   width: 500px;
   border-radius: 1rem;
   padding: 0.5rem;
@@ -52,19 +53,19 @@ const ButtonContainer = styled.div`
     width: 90%;
   }
   .bg-blue {
-    background-color: #a2b3e1;
-    border-bottom: 3px solid #414e6e;
+    background-color: ${(props) => props.theme.BgBtnFS};
+    border-bottom: 3px solid  ${(props) => props.theme.BorBtnFS};
     &:hover {
-      background-color: #414e6e;
-      border-bottom: 3px solid #a2b3e1;
+      background-color: ${(props) => props.theme.BgBtnFSHover};
+      border-bottom: 3px solid ${(props) => props.theme.BorBtnFSHover};
     }
   }
   .bg-red {
-    background-color: #f96c5b;
-    border-bottom: 3px solid #982415;
+    background-color: ${(props) => props.theme.BgBtnEqual};
+    border-bottom: 3px solid ${(props) => props.theme.BorBtnEqual};
     &:hover {
-      background-color: #982415;
-      border-bottom: 3px solid #f96c5b;
+      background-color: ${(props) => props.theme.BgBtnEqualHover};
+      border-bottom: 3px solid ${(props) => props.theme.BorBtnEqualHover};
     }
   }
   .row-1,
