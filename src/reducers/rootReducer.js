@@ -6,19 +6,27 @@ import {
   UPDATE,
   CLEAR,
   EQUAL,
-  DELL
+  DELL,
 } from "../actions/actionTypes";
 import * as math from "mathjs";
+import { firstTheme } from "./../components/Theme";
+import { APPLY_THEME } from "./../actions/actionTypes";
 
 const initialState = {
   display: "0",
   prevOP: "",
   accumulated: "0",
   history: "0",
+  theme: firstTheme,
 };
 
 export default function foo(state = initialState, action) {
   switch (action.type) {
+    case APPLY_THEME:
+      return {
+        ...state,
+        theme: action.payload
+      }
 
     case UPDATE: {
       const updateDisplay = action.payload;
@@ -37,18 +45,19 @@ export default function foo(state = initialState, action) {
               ? updateDisplay.input
               : state.display + updateDisplay.input,
           prevOP: updateDisplay.operation,
-        }
+        };
       }
-    }   
-        case DELL:{
-            return{
-                ...state,
-                display: state.display === '0' ||  state.prevOP === "operator" 
-                ? state.display : state.display.slice(0,  state.display.length - 1),
-                history: state.display,
-                
-            }
-        }
+    }
+    // case DELL: {
+    //   return {
+    //     ...state,
+    //     display:
+    //       state.display === "0" || state.prevOP === "operator"
+    //         ? state.display
+    //         : state.display.slice(0, state.display.length - 1),
+    //     history: state.display,
+    //   };
+    // }
     case ADD: {
       const history = () =>
         state.prevOP === "operator"
@@ -64,7 +73,7 @@ export default function foo(state = initialState, action) {
             ? state.accumulated + "+"
             : history() + state.display + "+",
         prevOP: "operator",
-      }
+      };
     }
     case SUBTRACT: {
       const history = () =>
@@ -82,7 +91,7 @@ export default function foo(state = initialState, action) {
             ? state.accumulated + "-"
             : history() + state.display + "-",
         prevOP: "operator",
-      }
+      };
     }
     case MULTIPLY: {
       const history = () =>
@@ -100,7 +109,7 @@ export default function foo(state = initialState, action) {
             ? state.accumulated + "*"
             : history() + state.display + "*",
         prevOP: "operator",
-      }
+      };
     }
 
     case DIVIDE: {
@@ -119,16 +128,16 @@ export default function foo(state = initialState, action) {
             ? state.accumulated + "/"
             : history() + state.display + "/",
         prevOP: "operator",
-      }
+      };
     }
     case CLEAR: {
       return {
         ...state,
         display: "0",
         prevOP: "clear",
-        accumulated: '0',
-        history: "0"
-      }
+        accumulated: "0",
+        history: "0",
+      };
     }
     case EQUAL: {
       let states = state.history + state.display;
@@ -137,7 +146,7 @@ export default function foo(state = initialState, action) {
       if (state.prevOP === "equal") {
         return {
           ...state,
-        }
+        };
       } else {
         return {
           ...state,
@@ -145,7 +154,7 @@ export default function foo(state = initialState, action) {
           display: math.round(maths, 4).toString(),
           accumulated: maths.toString(),
           prevOP: "equal",
-        }
+        };
       }
     }
 

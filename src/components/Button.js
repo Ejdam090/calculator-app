@@ -77,20 +77,21 @@ const ButtonWrapper = styled.button`
   padding: 1rem;
   margin: 0.5rem;
   border-radius: 0.5rem;
-  background-color: #eae3db;
-  border-bottom: 3px solid #afa59b;
+  background-color: ${(props) => props.theme.BgBtn};
+  border-bottom: 3px solid ${(props) => props.theme.BorBtn};
   cursor: pointer;
   transition: all 0.5s ease-in-out;
+  color: ${(props) => props.theme.fontColorBtn};
   &:hover {
-    background-color: #afa59b;
-    border-bottom: 3px solid #eae3db;
+    background-color: ${(props) => props.theme.BorBtn};
+    border-bottom: 3px solid ${(props) => props.theme.BgBtn};
   }
   @media (max-width: 530px) {
     font-size: 1.2rem;
     padding: 0.5rem;
   }
-  @media (max-width: 359px){
-        font-size: 1rem;
-      }
+  @media (max-width: 359px) {
+    font-size: 1rem;
+  }
 `;
 export default connect(null, mapDispatchToProps)(Button);
