@@ -7,5 +7,5 @@ This is the simple calculator. You can add, subtract, divide, multiply numbers. 
   - React-redux
   - Styled-components
   # Live
-  [Live](calculator090.netlify.app)
+  [Live](https://calculator090.netlify.app/)
 
