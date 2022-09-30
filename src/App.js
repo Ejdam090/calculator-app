@@ -24,6 +24,7 @@ function App({ display }) {
   );
 }
 const Container = styled.div`
+  transition: all 0.5s ease-in-out;
   background-color: ${(props) => props.theme.bodyBg};
   max-width: 1440px;
   height: 100vh;
@@ -38,7 +39,7 @@ const Container = styled.div`
     align-items: center;
     width: 500px;
     h1 {
-      color: white;
+      color: ${(props) => props.theme.fontColorDisplay};
       text-transform: uppercase;
       font-size: 1.5rem;
     }
