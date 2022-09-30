@@ -8,7 +8,6 @@ import Switcher from "./components/Switcher";
 
 function App({ display }) {
   const them = useSelector((state) => state.theme);
-
   return (
     <ThemeProvider theme={them}>
       <Container>

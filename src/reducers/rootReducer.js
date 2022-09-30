@@ -25,8 +25,8 @@ export default function foo(state = initialState, action) {
     case APPLY_THEME:
       return {
         ...state,
-        theme: action.payload
-      }
+        theme: action.payload,
+      };
 
     case UPDATE: {
       const updateDisplay = action.payload;
@@ -48,16 +48,16 @@ export default function foo(state = initialState, action) {
         };
       }
     }
-    // case DELL: {
-    //   return {
-    //     ...state,
-    //     display:
-    //       state.display === "0" || state.prevOP === "operator"
-    //         ? state.display
-    //         : state.display.slice(0, state.display.length - 1),
-    //     history: state.display,
-    //   };
-    // }
+    case DELL: {
+      const updatedDisp = action.payload;
+      return {
+        ...state,
+        display:
+          state.display === "0" || state.prevOP === "operator"
+            ? updatedDisp.input.slice(0, state.updateDisplay.length - 1)
+            : state.display.slice(0, state.display.length - 1),
+      };
+    }
     case ADD: {
       const history = () =>
         state.prevOP === "operator"
