@@ -33,11 +33,16 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+ 
   .header {
+   
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 500px;
+    @media (max-width: 530px) {
+      width: 90%;
+    }
     h1 {
       color: ${(props) => props.theme.fontColorDisplay};
       text-transform: uppercase;
